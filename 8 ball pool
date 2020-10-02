@@ -1,0 +1,68 @@
+gg.alert("Create By MasPool")
+gg.alert('==============\nSUBSCRIBE !!\n==============\nwww.youtube.com/maspool')
+    
+
+HOME = 1
+
+function HOME()
+menu = gg.choice({
+"HACK AIM CUE",
+" UNLOCK ALL GUIDE LINE",
+"EXIT"
+
+},nil,'================\nMOD BY MAS POOL\n================')
+
+if menu == 1 then C() end
+if menu == 2 then U()end
+if menu == 3 then
+gg.toast("?JANGAN LUPA SUBSCRIBE?") 
+os.exit() end
+HOMEDM = -1
+end
+
+function C()
+CN = gg.alert("================\nCreate By MasPool\n================\n\nMod Aim Cue 8 ball pool\nSUBSCRIBE","10 (Aman)","13 ( Percobaan)")
+if CN == 1 then
+d = gg.prompt({[1]='AIM', [2]='SPIN', [3]='TIME',[4]='POWER'}, {[1]='', [2]='', [3]='',[4]=''})
+gg.clearResults()
+gg.setRanges(gg.REGION_C_ALLOC)
+gg.searchNumber(d[4]..';'..d[2]..';'..d[1]..';'..d[3]..';'..'2'..';'..'2'..';'..'::21', gg.TYPE_DWORD , false, gg.SIGN_EQUAL, 0, -1)
+gg.getResults(6)
+gg.editAll(d[4]..';'..d[2]..';'..'10'..';'..d[3]..';'..'2'..';'..'2', gg.TYPE_DWORD)
+gg.toast("?MOD AIM SUCCESS?")
+gg.clearResults()
+end
+if CN == 2 then
+d = gg.prompt({[1]='AIM', [2]='SPIN', [3]='TIME',[4]='POWER'}, {[1]='', [2]='', [3]='',[4]=''})
+gg.clearResults()
+gg.setRanges(gg.REGION_C_ALLOC)
+gg.searchNumber(d[4]..';'..d[2]..';'..d[1]..';'..d[3]..';'..'2'..';'..'2'..';'..'::21', gg.TYPE_DWORD , false, gg.SIGN_EQUAL, 0, -1)
+gg.getResults(6)
+gg.editAll(d[4]..';'..d[2]..';'..'13'..';'..d[3]..';'..'2'..';'..'2', gg.TYPE_DWORD)
+gg.toast("?MOD AIM SUCCESS?")
+gg.clearResults()
+end
+end
+
+function U()
+UN = gg.alert("================\nCreate By MasPool\n================\n\nHanya Bisa di 8 ball pool 32Bit (Arm6)\nUntuk Unlock All Guide line","OK","BACK")
+if UN == 1 then
+gg.clearResults()
+gg.setRanges(gg.REGION_CODE_APP)
+gg.searchNumber("80h;02h;90h;E5h;00h;10h;A0h;E3h;FFh;00h;12h;E3h;01h;10h;00h;03h;11h;2Ch;00h;EAh::20", gg.TYPE_BYTE)
+gg.searchNumber("80h;02h;90h;E5h;00h;10h;A0h;E3h::8", gg.TYPE_BYTE)
+gg.getResults(8)
+gg.editAll("00h;00h;00h;E3h;1Eh;FFh;2Fh;E1h", gg.TYPE_BYTE)
+gg.clearResults()
+gg.toast("?All GUIDE LINE AKTIF?")
+end
+if UN == 2 then HOME() end
+end
+
+while true do 
+  if gg.isVisible(false) then 
+   HOMEDM = 1
+    gg.setVisible(false) 
+  end 
+  if HOMEDM == 1 then HOME() end 
+ end
